@@ -21,6 +21,7 @@ slots = []
 def add_stage(zone, block, s):
     startday = block * 4 + 1
     stage_offset = (0, 8, 12, 4)[s]
+    
     for count in range(3):
         day_offset, slot = divmod((zone - 1 - stage_offset) % 16 - block + 16 * count, 12)
         day_of_month = startday + day_offset
@@ -70,6 +71,5 @@ with open("zone_%d_stage_%d.ics" % (zone, stage), "w") as ical_file:
             day_of_month=day_of_month,
             min_stage=s + 1
         ))
-        
     
     ical_file.write(ical_foot)
