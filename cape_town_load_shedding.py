@@ -4,11 +4,15 @@ import sys
 import datetime
 
 try:
-    zone, stage = [int(a) for a in sys.argv[1:]]
+    zone, stage = [int(a) for a in sys.argv[1:3]]
+    only = True if len(sys.argv) > 3 and sys.argv[3].lower() == "only" else False
 except:
-    sys.exit("""Usage: cape_town_load_shedding.py ZONE STAGE
+    sys.exit("""Usage: `cape_town_load_shedding.py ZONE STAGE [only]`
 
-ZONE and STAGE must be integers. Stage 4 is stage 4, not 3A, because I'm not a politician.""")
+ZONE and STAGE must be integers. Stage 4 is stage 4, not 3A, because I'm not a politician.
+
+Passing `only` as the third parameter outputs a calendar with ONLY the shedding periods ADDED in the given stage.
+""")
 
 if not 1 <= zone <= 16:
     sys.exit("I only know about zones from 1 to 16.")
@@ -29,8 +33,11 @@ def add_stage(zone, block, s):
         slots.append((day_of_month + 16, slot, s)) # ignore 32nd day later, not now
 
 for block in range(4):
-    for s in range(4):
-        if stage > s:
+    if only:
+        add_stage(zone, block, stage - 1)
+    
+    else:
+        for s in range(stage):
             add_stage(zone, block, s)
 
 ical_head = """BEGIN:VCALENDAR
@@ -55,7 +62,7 @@ date_format = "%Y%m%dT%H%M%S"
 year = datetime.datetime.now().year
 duration = datetime.timedelta(hours=2, minutes=30)
 
-with open("zone_%d_stage_%d.ics" % (zone, stage), "w") as ical_file:
+with open("zone_%d_stage_%d%s.ics" % (zone, stage, "_only" if only else ""), "w") as ical_file:
     ical_file.write(ical_head)
 
     for day_of_month, slot, s in slots:
