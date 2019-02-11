@@ -14,13 +14,13 @@ Find the calendar(s) for your zone in the repo:
 
 Navigate to the calendar in the repo, and click the `Raw` button to be redirected to the actual file.
 
-## Add by URL (calendar appears under "other calendars")
+## Add by URL (calendar appears under "Other calendars")
 
 1. Copy the URL of the calendar file.
 2. In Google Calendar, expand the drop-down menu next to the `Add calendar` text box in the sidebar and select `From URL`.
 3. Paste the URL in the text box provided and click `Add calendar`.
 
-## Add by importing (calendar appears under "your calendars")
+## Add by importing (calendar appears under "My calendars")
 
 1. Download the calendar file.
 2. In Google Calendar, expand the drop-down menu next to the `Add calendar` text box in the sidebar and select `New calendar`.
