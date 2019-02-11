@@ -28,6 +28,7 @@ def add_stage(zone, block, s):
     
     for count in range(3):
         day_offset, slot = divmod((zone - 1 - stage_offset) % 16 - block + 16 * count, 12)
+        day_offset %= 4
         day_of_month = startday + day_offset
         slots.append((day_of_month, slot, s)) # 1-indexed, 0-indexed, 0-indexed
         slots.append((day_of_month + 16, slot, s)) # ignore 32nd day later, not now
