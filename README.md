@@ -39,3 +39,5 @@ Passing `only` as the third parameter outputs a calendar with ONLY the shedding 
 # Disclaimer
 
 I'm not affiliated with the City of Cape Town in any way. This script was very hurriedly written and very briefly tested. Please check the calendar against the official schedule, and file an issue if you find a bug!
+
+Also, just to be absolutely clear, this is just the City's (theoretical) shedding schedule translated into calendar form to make planning easier. The calendar has no idea what stage you're in or if you're actually going to be shed!
