@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for zone in {1..15}
+for zone in {1..16}
 do
     for stage in {1..4}
     do
