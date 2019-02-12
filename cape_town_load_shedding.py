@@ -52,7 +52,7 @@ DTSTAMP;TZID=Africa/Johannesburg:{start_time}
 DTSTART;TZID=Africa/Johannesburg:{start_time}
 RRULE:FREQ=MONTHLY;BYMONTHDAY={day_of_month}
 DTEND;TZID=Africa/Johannesburg:{end_time}
-SUMMARY:Loadshedding (stage {min_stage}+)
+SUMMARY:Zone {zone} Loadshedding (stage {min_stage}+)
 END:VEVENT
 """
 
@@ -77,6 +77,7 @@ with open("zone_%d_stage_%d%s.ics" % (zone, stage, "_only" if only else ""), "w"
             start_time=start.strftime(date_format),
             end_time=end.strftime(date_format),
             day_of_month=day_of_month,
+            zone=zone,
             min_stage=s + 1
         ))
     
