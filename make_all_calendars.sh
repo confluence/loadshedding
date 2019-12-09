@@ -4,9 +4,9 @@ for zone in {1..16}
 do
     for stage in {1..4}
     do
-        for only in "" "only"
+        for only in "" "--only"
         do
-            ./cape_town_load_shedding.py $zone $stage $only
+            ./cape_town_load_shedding.py --zone $zone --stage $stage $only
         done
     done
 done

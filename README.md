@@ -34,11 +34,15 @@ Because adding a calendar by URL is called a "subscription", you might expect to
 
 # Script
 
-Usage: `cape_town_load_shedding.py ZONE STAGE`
+Basic usage: `cape_town_load_shedding.py -z ZONE -s STAGE`
 
 `ZONE` and `STAGE` must be integers. Stage 4 is stage 4, not 3A, because I'm not a politician.
 
-Passing `only` as the third parameter outputs a calendar with ONLY the shedding periods ADDED in the given stage. This is useful if you want to import each additional set of periods as a separate calendar so that you can toggle them on and off.
+Adding `-o` outputs a calendar with ONLY the shedding periods ADDED in the given stage. This is useful if you want to import each additional set of periods as a separate calendar so that you can toggle them on and off.
+
+For advanced usage information, use the help flag: `cape_town_load_shedding.py -h`
+
+It's possible to add multiple zones to a single calendar and to specify custom labels for zones. This makes it easier to aggregate multiple notable landmarks in a single calendar efficiently. The command used to generate the calendar file is now written to the header, so that you can recreate it more easily if you want to change something. It's probably easiest to regenerate the whole calendar and delete the old one.
 
 # Disclaimer
 
