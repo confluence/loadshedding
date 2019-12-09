@@ -46,6 +46,8 @@ For advanced usage information, use the help flag: `cape_town_load_shedding.py -
 
 It's possible to add multiple zones to a single calendar and to specify custom labels for zones. This makes it easier to aggregate multiple notable landmarks in a single calendar efficiently. The command used to generate the calendar file is now written to the header, so that you can recreate it more easily if you want to change something. It's probably easiest to regenerate the whole calendar and delete the old one.
 
+Note that importing a very large calendar file into Google Calendar may time out, and either fail entirely or leave you with a partial import. Read the messages carefully and consider importing each zone separately if you run into trouble. This is most likely to happen if you create a combined calendar for a high stage.
+
 # Disclaimer
 
 I'm not affiliated with the City of Cape Town in any way. Support for stages above 4 was added recently and hurriedly, and very briefly tested. Please check the calendar against the official schedule, and file an issue if you find a bug!
