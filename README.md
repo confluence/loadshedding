@@ -2,6 +2,8 @@
 
 This is a script for converting the Cape Town loadshedding schedule to iCalendar format. All possible calendars have been generated and are also in this repo, so you don't actually need to run the script yourself.
 
+Please note that support for stages 5 to 8 is **experimental** -- please check the calendar against the official schedule and report any bugs.
+
 # How to add to Google Calendar
 
 ## Get your calendar(s)
@@ -36,7 +38,7 @@ Because adding a calendar by URL is called a "subscription", you might expect to
 
 Basic usage: `cape_town_load_shedding.py -z ZONE -s STAGE`
 
-`ZONE` and `STAGE` must be integers. Stage 4 is stage 4, not 3A, because I'm not a politician.
+`ZONE` and `STAGE` must be integers. Stages go up to 8 now, regrettably.
 
 Adding `-o` outputs a calendar with ONLY the shedding periods ADDED in the given stage. This is useful if you want to import each additional set of periods as a separate calendar so that you can toggle them on and off.
 
@@ -46,6 +48,6 @@ It's possible to add multiple zones to a single calendar and to specify custom l
 
 # Disclaimer
 
-I'm not affiliated with the City of Cape Town in any way. This script was very hurriedly written and very briefly tested. Please check the calendar against the official schedule, and file an issue if you find a bug!
+I'm not affiliated with the City of Cape Town in any way. Support for stages above 4 was added recently and hurriedly, and very briefly tested. Please check the calendar against the official schedule, and file an issue if you find a bug!
 
 Also, just to be absolutely clear, this is just the City's (theoretical) shedding schedule translated into calendar form to make planning easier. The calendar has no idea what stage you're in or if you're actually going to be shed!

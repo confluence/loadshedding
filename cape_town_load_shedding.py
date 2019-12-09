@@ -38,7 +38,7 @@ def add_zone(zone, stage, only):
 
     def add_stage(zone, block, s):
         startday = block * 4 + 1
-        stage_offset = (0, 8, 12, 4)[s]
+        stage_offset = (0, 8, 12, 4, 1, 9, 13, 5)[s]
         
         for count in range(3):
             day_offset, slot = divmod((zone - 1 - stage_offset) % 16 - block + 16 * count, 12)
@@ -91,7 +91,7 @@ def write_calendar(all_events, filename, labels):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a loadshedding calendar for a zone managed by the City of Cape Town")
     parser.add_argument('-z', '--zone', nargs="+", help="Add zone. Multiple zones can be added to the same calendar.", type=int, choices=range(1, 16+1), metavar="[1-16]", required=True)
-    parser.add_argument('-s', '--stage', help="The stage", type=int, choices=range(1, 1+4), metavar="[1-4]", required=True)
+    parser.add_argument('-s', '--stage', help="The stage", type=int, choices=range(1, 1+8), metavar="[1-8]", required=True)
     parser.add_argument('-o', '--only', help="Add only the specified stage (by default, all stages up to and including the specified stage will be added).", action="store_true")
     parser.add_argument('-l', '--label', nargs="+", help="Custom zone label. If multiple zones and labels are specified, they will be combined in the order in which they are given.", default=[])
     parser.add_argument('-f', '--filename', help="Name of the output calendar file.")

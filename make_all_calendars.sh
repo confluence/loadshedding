@@ -2,7 +2,7 @@
 
 for zone in {1..16}
 do
-    for stage in {1..4}
+    for stage in {1..8}
     do
         for only in "" "--only"
         do
