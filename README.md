@@ -30,15 +30,16 @@ Navigate to the calendar in the repo, and click the `Raw` button to be redirecte
 4. Click on `Import & export` in the sidebar.
 5. Click on `Select file from your computer` and select the file you downloaded. Select the calendar you just created from the `Add to calendar` menu and click `Import`. **BE CAREFUL**; the default is your main calendar, and the import can't easily be undone (but see below).
 
+
+## OH @#$%&*, I IMPORTED A CALENDAR INTO MY MAIN CALENDAR BY MISTAKE! NOW WHAT?!
+
+Don't panic; you can fix it with a Google Apps script. I'm providing a script template in this repo; adapt and use it at your own risk. Detailed support is outside the scope of this project. Please don't blow up your calendar.
+
 # Updating your calendar(s)
 
 Because adding a calendar by URL is called a "subscription", you might expect to get updates automatically if the calendar changes (which may happen if I find a bug in the code -- see the disclaimer!). But it appears that Google refreshes external calendars very infrequently, and also caches them, so if you want to get an updated calendar immediately the only 100% reliable way is to import it.
 
-# OH @#$%&*, I IMPORTED A CALENDAR INTO MY MAIN CALENDAR BY MISTAKE! NOW WHAT?!
-
-Don't panic; you can fix it with a Google Apps script. I'm providing a script template in this repo; adapt and use it at your own risk. Detailed support is outside the scope of this project. Please don't blow up your calendar.
-
-# Script
+# Running the script yourself
 
 Basic usage: `cape_town_load_shedding.py -z ZONE -s STAGE`
 
