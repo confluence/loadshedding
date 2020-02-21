@@ -37,7 +37,7 @@ Don't panic; you can fix it with a Google Apps script. I'm providing a script te
 
 # Updating your calendar(s)
 
-Because adding a calendar by URL is called a "subscription", you might expect to get updates automatically if the calendar changes (which may happen if I find a bug in the code -- see the disclaimer!). But it appears that Google refreshes external calendars very infrequently, and also caches them, so if you want to get an updated calendar immediately the only 100% reliable way is to import it.
+Because adding a calendar by URL is called a "subscription", you might expect to get updates automatically if the calendar changes (which may happen if I find a bug in the code -- see the disclaimer -- or if I change how the events are formatted). But it appears that Google caches external calendars, and possibly never refreshes them. If you're getting an old version of a calendar for a particular URL, you can either import it instead, or use the fake GET parameter trick: add `?somerandomstring` to the end of the URL when you add it. It'll be the same calendar, but a different URL, so it won't be cached!
 
 # Running the script yourself
 
