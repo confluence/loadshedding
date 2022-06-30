@@ -40,6 +40,10 @@ def add_zone(zone, stage, only):
         startday = block * 4 + 1
         stage_offset = (0, 8, 12, 4, 1, 9, 13, 5)[s]
         
+        # The pattern is broken!!
+        if block == 3:
+            stage_offset = (0, 8, 12, 4, -3, 5, 9, 1)[s]
+
         for count in range(3):
             day_offset, slot = divmod((zone - 1 - stage_offset) % 16 - block + 16 * count, 12)
             day_offset %= 4
@@ -85,6 +89,7 @@ def write_calendar(all_events, filename, labels):
                 ))
         
         ical_file.write(ical_foot)
+
 
 # ----------- MAIN ----------- #
 
